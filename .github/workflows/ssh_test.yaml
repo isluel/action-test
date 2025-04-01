@@ -1,4 +1,4 @@
-name: ssh-test
+name: ssh-connetion
 on:
   pull_request:
     branchs: [dev]
