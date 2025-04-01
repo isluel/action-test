@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3.3.0
     - name: execute remote ssh
-      uses: appleboy/ssh-action@v1.2.2
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.REMOTE_SSH_HOST }}
         username: ${{ secrets.REMOTE_SSH_USERNAME }}
@@ -17,7 +17,6 @@ jobs:
         port: ${{ secrets.REMOTE_SSH_PORT }}
         script: |
           whoami
-          docker start ansible-server
 
     # - name: Create SSH Key
     #   run: | # access key를 actions 내부 워크스페이스에 pem파일로 저장하고 권한을 확보
