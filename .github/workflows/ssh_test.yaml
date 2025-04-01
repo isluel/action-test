@@ -4,7 +4,7 @@ on:
     branchs: [dev]
 
 jobs:
-  ssh-connection21:
+  ssh-connection22:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3.3.0
