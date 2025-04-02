@@ -12,7 +12,7 @@ jobs:
     #   uses: mxschmitt/action-tmate@v3
     #   timeout-minutes: 10
     - name: execute remote ssh
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@v1.2.2
       with:
         host: ${{ secrets.REMOTE_SSH_HOST }}
         username: ${{ secrets.REMOTE_SSH_USERNAME }}
