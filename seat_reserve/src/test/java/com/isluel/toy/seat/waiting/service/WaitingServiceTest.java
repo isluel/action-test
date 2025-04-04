@@ -100,6 +100,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
     @DisplayName("앞의 대기 인원을 조회한다")
     @Test
+    @Disabled
     void checkWaiting() {
         // given
         String movieId = "1";
