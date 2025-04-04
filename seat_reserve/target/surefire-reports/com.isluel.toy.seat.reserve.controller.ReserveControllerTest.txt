@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.isluel.toy.seat.reserve.controller.ReserveControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.978 s -- in com.isluel.toy.seat.reserve.controller.ReserveControllerTest

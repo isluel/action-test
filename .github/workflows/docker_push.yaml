@@ -1,0 +1,22 @@
+name: docker-push
+on:
+  pull_request:
+    branchs: [dev]
+
+jobs:
+  docker-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: chekcout
+      uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21' # 버전
+        distribution: 'temurin' # 배포판
+        server-id: github 
+        settings-path: ${{ github.workspace }}
+    - name: Maven packaging
+      run: |
+        cd seat_reserve
+        mvn -B package --file pom.xml
