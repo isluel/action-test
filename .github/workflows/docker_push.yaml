@@ -21,9 +21,9 @@ jobs:
         cd seat_reserve
         mvn -B package --file pom.xml
 
-  image-push:
+  docdker-push:
     runs-on: ubuntu-latest
-    needs: [docker-push]
+    needs: [maven-packing]
     permissions:
       id-token: write
       contents: read
