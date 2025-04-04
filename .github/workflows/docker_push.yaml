@@ -36,6 +36,6 @@ jobs:
         username: ${{ secrets.DOCKER_ID }}
         password: ${{ secrets.DOCKER_PW }}
     - name: Build Docker Image
-      run: docker build . --file Dockerfile --tag isluel/seat_reserve:${{ github.sha }}
+      run: docker build . --file ../scenario_2/Dockerfile --tag isluel/seat_reserve:${{ github.sha }}
     - name: Push Docker Image
       run: docker push isluel/seat_reserve:${{ github.sha }}
