@@ -54,8 +54,8 @@ jobs:
         password: ${{ secrets.REMOTE_SSH_PASSWORD}}
         port: ${{ secrets.REMOTE_SSH_PORT }}
         script: |
-          docker stop isluel/seat_reserve
-          docker rm isluel/seat_reserve
+          docker stop seat_reserve
+          docker rm seat_reserve
           docker rmi $(docker images -q --filter 'reference=isluel/seat_reserve')
     - name: docker pull
       uses: appleboy/ssh-action@v1.2.2
@@ -67,4 +67,4 @@ jobs:
         port: ${{ secrets.REMOTE_SSH_PORT }}
         script: |
           docker pull isluel/seat_reserve
-          docker run -d -p 8098:8098 -e "JAVA_OPTS=-Dspring.datasource.url=jdbc:mysql://host.docker.internal:3306/seat_reserve?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true -Dspring.data.redis.host=host.docker.internal" --name seat_reserve --restart=on-failure isluel/seat_reserve
+          docker run -d -p 8098:8098 -e 'JAVA_OPTS=-Dspring.datasource.url=jdbc:mysql://host.docker.internal:3306/seat_reserve?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true -Dspring.data.redis.host=host.docker.internal' --name seat_reserve --restart=on-failure isluel/seat_reserve
