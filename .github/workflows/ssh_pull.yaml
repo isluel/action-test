@@ -42,7 +42,7 @@ jobs:
       run: |
         docker push isluel/seat_reserve:${{ github.sha }}
   
-  ssh-pull:
+  ssh-pull2:
     runs-on: ubuntu-latest
     needs: [docker-push]
     steps:
