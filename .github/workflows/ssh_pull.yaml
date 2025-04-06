@@ -66,7 +66,7 @@ jobs:
         password: ${{ secrets.REMOTE_SSH_PASSWORD}}
         port: ${{ secrets.REMOTE_SSH_PORT }}
         script: |
-          docker pull isluel/seat_reserve
+          docker pull isluel/seat_reserve:${{ github.sha }}
     - name: docker run
       uses: appleboy/ssh-action@v1.2.2
       if: always()
