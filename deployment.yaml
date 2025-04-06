@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seat-reserve-deployment
+spec:
+  selector:
+    matchLabels:
+      app: seat-reserve-devops
+  replicas: 1
+
+  template:
+    metadata:
+      labels:
+        app: seat-reserve-devops
+    spec:
+      containers:
+      - name: seat-reserve-devops
+        image: isluel/seat_reserve
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8098
+        env:
+        - name: JAVA_OPTS
+          value: " -Dspring.datasource.url=jdbc:mysql://host.docker.internal:3306/seat_reserve?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true -Dspring.data.redis.host=host.docker.internal"
