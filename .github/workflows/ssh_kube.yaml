@@ -67,16 +67,6 @@ jobs:
         port: ${{ secrets.REMOTE_SSH_PORT }}
         script: |
           docker pull isluel/seat_reserve:${{ github.sha }}
-    - name: docker run
-      uses: appleboy/ssh-action@v1.2.2
-      if: always()
-      with:
-        host: ${{ secrets.REMOTE_SSH_HOST }}
-        username: ${{ secrets.REMOTE_SSH_USERNAME }}
-        password: ${{ secrets.REMOTE_SSH_PASSWORD}}
-        port: ${{ secrets.REMOTE_SSH_PORT }}
-        script: |
-          docker run -d -p 8098:8098 -e "JAVA_OPTS=-Dspring.datasource.url=jdbc:mysql://host.docker.internal:3306/seat_reserve?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true -Dspring.data.redis.host=host.docker.internal" --name seat_reserve isluel/seat_reserve
 
   ssh-kube:
     runs-on: ubuntu-latest
