@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.isluel.toy.seat.waiting.service.WaitingServiceTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.483 s -- in com.isluel.toy.seat.waiting.service.WaitingServiceTest

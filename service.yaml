@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: seat-reserve-service
+  labels:
+    app: seat-reserve-devops
+spec:
+  selector:
+    app: seat-reserve-devops
+  type: NodePort
+  ports:
+    - port: 8098
+      targetPort: 8098
+      nodePort: 32000
