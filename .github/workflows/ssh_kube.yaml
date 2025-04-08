@@ -82,5 +82,5 @@ jobs:
         password: ${{ secrets.REMOTE_SSH_PASSWORD}}
         port: ${{ secrets.REMOTE_SSH_PORT }}
         script: |
-          kubectl apply -f ./deployment.yaml
-          kubectl apply -f ./service.yaml
+          kubectl apply -f ./github-action-test/deployment.yaml
+          kubectl apply -f ./github-action-test/service.yaml
